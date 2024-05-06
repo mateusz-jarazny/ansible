@@ -6,13 +6,4 @@
       apt:
         update_cache: true
   tasks:
-  - name: Install zsh
-    apt:
-      name: zsh
-      state: latest
-    become: true
-  - name: Change shell
-    shell: chsh -s $(which zsh) {{ user }}
-    become: true
-  - name: Install ohmyzsh
-    shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    - include: tasks/zsh.yml
