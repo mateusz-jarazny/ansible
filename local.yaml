@@ -1,10 +1,11 @@
 - hosts: localhost
   vars:
     user: mateusz
-  pre-tasks:
+  pre_tasks:
     - name: Update apt
       apt:
         update_cache: true
+      become: true
   tasks:
-    - include: tasks/zsh.yml
-    - include: tasks/docker.yml
+    - import_tasks: tasks/zsh.yml
+    - import_tasks: tasks/docker.yml
