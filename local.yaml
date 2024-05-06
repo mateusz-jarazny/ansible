@@ -7,3 +7,4 @@
         update_cache: true
   tasks:
     - include: tasks/zsh.yml
+    - include: tasks/docker.yml
